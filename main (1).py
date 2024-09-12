@@ -82,8 +82,8 @@ def main():
     
     name_folder = 'images'
 
-    api_key = '7UqJVOW65vEpUrecoaiOQzsS2UQQvlLo1mmXVETS'
-    nasa_api_key = '5eb87d42ffd86e000604b384'
+    api_key = ''
+    nasa_api_key = ''
 
     url_nasa = f'https://api.spacexdata.com/v5/launches/{nasa_api_key}'
 
