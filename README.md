@@ -16,3 +16,5 @@ TG_TOKEN = 'the token of your telegram bot'
 TG_CHAT_ID = 'telegram token of the channel you want to send messages to (must start with -100)'
 NASA_KEY = 'api key that you will receive'
 ```
+
+##technical aspects
