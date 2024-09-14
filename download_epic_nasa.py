@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 
 def main():
     load_dotenv()
-    link_epic = "https://api.nasa.gov/EPIC/api/natural/images"
+    epic_link = "https://api.nasa.gov/EPIC/api/natural/images"
 
     parser = argparse.ArgumentParser(description='Введите название папки в которую хотите скачать фотографии EPIC фото:')
     parser.add_argument('--folder',
@@ -27,7 +27,7 @@ def main():
 
     params = {"api_key": epic_key}
 
-    response = requests.get(link_epic, params=params)
+    response = requests.get(epic_link, params=params)
     response.raise_for_status()
     epic_images = response.json()
 
