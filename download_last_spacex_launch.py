@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 def main():
     load_dotenv()
 
-    parser = argparse.ArgumentParser(description='Введите ID первого запуска:')
+    parser = argparse.ArgumentParser(description='Введите название папки в которую хотите скачать фотографии last launch фото:')
     parser.add_argument('--folder',
                         type=str,
                         default='last_spacex_launch_images',
