@@ -11,7 +11,7 @@ def main():
     load_dotenv()
     link_epic = "https://api.nasa.gov/EPIC/api/natural/images"
 
-    parser = argparse.ArgumentParser(description='Введите KEY EPIC-запуска:')
+    parser = argparse.ArgumentParser(description='Введите название папки в которую хотите скачать фотографии EPIC фото:')
     parser.add_argument('--folder',
                         type=str,
                         default='epic_nasa_images',
