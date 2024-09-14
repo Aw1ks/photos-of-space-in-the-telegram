@@ -38,7 +38,7 @@ def main():
 
             apod_filename = urlparse(url)
             expansion = os.path.splitext(url)
-            file_name = f'{apod_filename.netloc}_{number + 1}{expansion[1]}'
+            file_name = f'{apod_filename.netloc}_{number}{expansion[1]}'
             full_path = os.path.join(apod_folder, file_name)
 
             download_image(url, full_path)
