@@ -32,7 +32,7 @@ def main():
     response.raise_for_status()
     links = response.json()
 
-    for number, link in enumerate(links):
+    for number, link in enumerate(links, start=1):
         if 'url' in link:
             url = link['url']
 
