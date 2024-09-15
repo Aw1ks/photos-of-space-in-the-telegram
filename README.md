@@ -47,7 +47,8 @@ To run this script, you need to run it and additionally call two arguments. The 
 ```
 python tg_bot.py --folder (the name of the folder from which you want to send the photo) --time(the time interval between sending the photo)
 ```
-It is important to note that the time period is counted in seconds
+It is important to note that the time period is counted in seconds.
+
 You can also run this script without the time argument, then the interval between sending the photo will be 4 hours.
 ```
 python tg_bot.py --folder (the name of the folder from which you want to send the photo)
