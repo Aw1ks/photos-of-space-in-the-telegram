@@ -33,12 +33,13 @@ def main():
     links = response.json()
 
     for number, link in enumerate(links, start=1):
-        if 'url' in link:
-            url = link['url']
+            url = link.get('url')
+            if not url:
+               continue
 
-            apod_filename = urlparse(url)
-            expansion = os.path.splitext(url)
-            file_name = f'{apod_filename.netloc}_{number}{expansion[1]}'
+            apod_filename = urlparse(url).netloc
+            expansion = os.path.splitext(url)[1]
+            file_name = f'{apod_filename}_{number}{expansion}'
             full_path = os.path.join(apod_folder, file_name)
 
             download_image(url, full_path)
