@@ -53,3 +53,6 @@ You can also run this script without the time argument, then the interval betwee
 ```
 python tg_bot.py --folder (the name of the folder from which you want to send the photo)
 ```
+# Environment variables
+Environment variables are key—value pairs that determine the settings and behavior of the operating system and programs. You can read more here [Learn more about environment variables](https://habr.com/ru/companies/gnivc/articles/792082/)
+## 
