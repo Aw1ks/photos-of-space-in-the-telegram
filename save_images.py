@@ -12,6 +12,6 @@ def download_image(url, full_path):
     with open(full_path, 'wb') as file:
         file.write(response.content)
 
-def get_expansion(url):
+def get_extansion(url):
     path = urlparse(url).path
     return os.path.splitext(path)[1]
