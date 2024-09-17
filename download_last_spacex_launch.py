@@ -18,8 +18,7 @@ def main():
     args = parser.parse_args()
     name_folder_last_launch = args.folder
 
-    if not os.path.exists(name_folder_last_launch):
-        os.makedirs(name_folder_last_launch)
+    os.makedirs(name_folder_last_launch, exist_ok=False)
 
     launch_id = os.getenv('LAST_LAUNCH_KEY')
 
