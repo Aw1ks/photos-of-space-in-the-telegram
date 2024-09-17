@@ -20,9 +20,8 @@ def main():
     args = parser.parse_args()
     epic_folder = args.folder
 
-    if not os.path.exists(epic_folder):
-        os.makedirs(epic_folder)
-
+    os.makedirs(epic_folder, exist_ok=False)
+    
     epic_key = os.getenv('NASA_KEY')
 
     params = {"api_key": epic_key}
