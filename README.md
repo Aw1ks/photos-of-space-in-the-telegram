@@ -51,8 +51,19 @@ python tg_bot.py --folder (the name of the folder from which you want to send th
 ```
 # Environment variables
 Environment variables are key—value pairs that determine the settings and behavior of the operating system and programs. You can read more here [Learn more about environment variables](https://habr.com/ru/companies/gnivc/articles/792082/)
-## Environment variables in ownload_last_spacex_launch.py
-The launch_id variable takes the ID of the last launch from the .env file using the os library using the getenv method.
+## Environment variables in download_last_spacex_launch.py
+The launch_id variable takes the ID of the last launch from the .env file using the [os](https://docs.python.org/3/library/os.html) library using the `.getenv` method.
 ```
 launch_id = os.getenv('LAST_LAUNCH_KEY')
+```
+## Environment variables in download_epic_nasa.py and download_apod_nasa.py
+The situation here is exactly the same as with download_last_spacex_launch.py The epic_key and apod_key variables store the NASA api key.
+
+download_apod_nasa.py
+```
+apod_key = os.getenv('NASA_KEY')
+```
+download_epic_nasa.py
+```
+epic_key = os.getenv('NASA_KEY')
 ```
