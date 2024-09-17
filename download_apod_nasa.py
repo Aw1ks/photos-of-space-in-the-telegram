@@ -20,8 +20,7 @@ def main():
     args = parser.parse_args()
     apod_folder = args.folder
 
-    if not os.path.exists(apod_folder):
-        os.makedirs(apod_folder)
+    os.makedirs(apod_folder, exist_ok=False)
 
     apod_key = os.getenv('NASA_KEY')
 
