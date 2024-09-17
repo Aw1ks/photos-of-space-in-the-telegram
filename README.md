@@ -35,7 +35,6 @@ python download_epic_nasa.py
 ```
 ## How to launch a script download_last_spacex_launch
 This file downloads photos of the last NASA launch and downloads them to the folder you specify. To run this code, you need to run the script itself.
-You can also call it without an id argument.
 ```
 python download_last_spacex_launch.py
 ```
