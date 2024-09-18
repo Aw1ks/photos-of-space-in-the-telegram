@@ -33,8 +33,10 @@ def main():
     params = {
         'api_key': epic_key
     }
+    
+    quantity_images = 10
 
-    for epic_image in epic_images[:10]:
+    for epic_image in epic_images[:quantity_images]:
         file_name = epic_image["image"]
         epic_image_date = epic_image["date"]
 
