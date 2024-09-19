@@ -32,10 +32,6 @@ def main():
     response = requests.get(epic_link, params=params)
     response.raise_for_status()
     epic_images = response.json()
-
-    params = {
-        'api_key': epic_key
-    }
     
     images_quantity = 10
 
