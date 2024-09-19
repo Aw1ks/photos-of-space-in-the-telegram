@@ -25,9 +25,9 @@ def main():
 
     launch_id = os.getenv('LAST_LAUNCH_KEY')
 
-    nasa_url = f'https://api.spacexdata.com/v5/launches/{launch_id}'
+    url = f'https://api.spacexdata.com/v5/launches/{launch_id}'
 
-    response = requests.get(nasa_url)
+    response = requests.get(url)
     response.raise_for_status()
     last_launch_links = response.json()['links']['flickr']['original']
 
