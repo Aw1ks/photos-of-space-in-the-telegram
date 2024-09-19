@@ -17,6 +17,9 @@ def main():
                         default='apod_nasa_images',
                         help='Введите имя папки в которую хотите поместить фотографии APOD nasa images:')
 
+    parser.add_argument('--help',
+                       description='Введите название папки в которую хотите скачать фотографии APOD фото:')
+
     args = parser.parse_args()
     apod_folder = args.folder
 
