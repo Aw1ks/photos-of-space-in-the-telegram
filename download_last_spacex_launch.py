@@ -14,6 +14,9 @@ def main():
                         type=str,
                         default='last_spacex_launch_images',
                         help='Введите имя папки в которую хотите поместить фотографии:')
+
+    parser.add_argument('--help',
+                       description='Введите название папки в которую хотите скачать фотографии last launch фото:')
     
     args = parser.parse_args()
     name_folder_last_launch = args.folder
