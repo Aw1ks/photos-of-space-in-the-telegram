@@ -41,9 +41,11 @@ def main():
 
         epic_image_date = datetime.fromisoformat(epic_image_date).strftime("%Y/%m/%d")
         link_path = f"https://api.nasa.gov/EPIC/archive/natural/{epic_image_date}/png/{file_name}.png"
-        link_path_with_params = f'{link_path}?{urlencode(params)}'
+        encoded_params = urlencode(params)
+        encoded_params = encoded_params.lstrip('?')
+        link_path_with_params = f"{link_path}{encoded_params}"
         path = os.path.join(epic_folder, f'{file_name}.png')
-
+        
         download_image(link_path_with_params, path)
 
 
