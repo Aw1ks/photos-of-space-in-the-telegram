@@ -37,9 +37,9 @@ def main():
         'api_key': epic_key
     }
     
-    quantity_images = 10
+    images_quantity = 10
 
-    for epic_image in epic_images[:quantity_images]:
+    for epic_image in epic_images[:images_quantity]:
         file_name = epic_image["image"]
         epic_image_date = epic_image["date"]
 
