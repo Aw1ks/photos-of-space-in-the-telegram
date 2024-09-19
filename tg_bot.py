@@ -7,7 +7,7 @@ import time
 from dotenv import load_dotenv
 
 
-def send_document(folder, bot, tg_chat_id, time_period):
+def send_documents(folder, bot, tg_chat_id, time_period):
     while True:
         all_files = []
 
