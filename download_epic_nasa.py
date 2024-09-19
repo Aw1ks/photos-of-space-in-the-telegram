@@ -17,6 +17,9 @@ def main():
                         default='epic_nasa_images',
                         help='Введите имя папки в которую хотите поместить фотографии EPIC nasa images:')
 
+    parser.add_argument('--help',
+                       description='Введите название папки в которую хотите скачать фотографии EPIC фото:')
+
     args = parser.parse_args()
     epic_folder = args.folder
 
