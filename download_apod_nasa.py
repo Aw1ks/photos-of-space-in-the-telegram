@@ -11,7 +11,7 @@ def main():
     load_dotenv()
     link_apod = 'https://api.nasa.gov/planetary/apod'
 
-    parser = argparse.ArgumentParser(description='Это скрипт download_apod_nasa.py в переменную epic_key введите свай наса-ключ и запустите скрип: download_apod_nasa.py --folder (имя папки в которую хотите скачать фото)')
+    parser = argparse.ArgumentParser(description='Введите KEY APOD-запуска:')
     parser.add_argument('--folder',
                         type=str,
                         default='apod_nasa_images',
@@ -31,17 +31,16 @@ def main():
     response.raise_for_status()
     links = response.json()
 
-    for number, link in enumerate(links, start=1):
-            url = link.get('url')
-            if not url:
-               continue
+    for number, link in enumerate(links):
+        if 'url' in link:
+            url = link['url']
 
-            apod_filename = urlparse(url).netloc
-            expansion = os.path.splitext(url)[1]
-            file_name = f'{apod_filename}_{number}{expansion}'
+            filename2 = urlparse(url)
+            expansion = os.path.splitext(url)
+            file_name = f'{filename2.netloc}_{number + 1}{expansion[1]}'
             full_path = os.path.join(apod_folder, file_name)
 
-            download_image(url, full_path)
+            download_image(apod_folder, url, full_path)
 
 
 if __name__ == "__main__":
