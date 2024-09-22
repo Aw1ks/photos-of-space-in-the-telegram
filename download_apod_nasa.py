@@ -11,14 +11,11 @@ def main():
     load_dotenv()
     link_apod = 'https://api.nasa.gov/planetary/apod'
 
-    parser = argparse.ArgumentParser(description='Введите название папки в которую хотите скачать фотографии APOD фото:')
+    parser = argparse.ArgumentParser(description='Это скрипт download_apod_nasa.py в переменную epic_key введите свай наса-ключ и запустите скрип: download_apod_nasa.py --folder (имя папки в которую хотите скачать фото)')
     parser.add_argument('--folder',
                         type=str,
                         default='apod_nasa_images',
                         help='Введите имя папки в которую хотите поместить фотографии APOD nasa images:')
-
-    parser.add_argument('--help',
-                       description='Введите название папки в которую хотите скачать фотографии APOD фото:')
 
     args = parser.parse_args()
     apod_folder = args.folder
