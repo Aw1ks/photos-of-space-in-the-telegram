@@ -11,14 +11,11 @@ def main():
     load_dotenv()
     epic_link = "https://api.nasa.gov/EPIC/api/natural/images"
 
-    parser = argparse.ArgumentParser(description='Введите название папки в которую хотите скачать фотографии EPIC фото:')
+    parser = argparse.ArgumentParser(description='Это скрипт download_epic_nasa.py в переменную epic_key введите свай наса-ключ и запустите скрип: download_epic_nasa.py --folder (имя папки в которую хотите скачать фото)')
     parser.add_argument('--folder',
                         type=str,
                         default='epic_nasa_images',
                         help='Введите имя папки в которую хотите поместить фотографии EPIC nasa images:')
-
-    parser.add_argument('--help',
-                       description='Введите название папки в которую хотите скачать фотографии EPIC фото:')
 
     args = parser.parse_args()
     epic_folder = args.folder
