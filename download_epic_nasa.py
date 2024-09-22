@@ -5,11 +5,11 @@ import argparse
 from datetime import datetime
 from save_images import download_image
 from dotenv import load_dotenv
+from urllib.parse import urlencode
 
 
 def main():
     load_dotenv()
-    epic_link = "https://api.nasa.gov/EPIC/api/natural/images"
 
     parser = argparse.ArgumentParser(description='Это скрипт download_epic_nasa.py в переменную epic_key введите свай наса-ключ и запустите скрип: download_epic_nasa.py --folder (имя папки в которую хотите скачать фото)')
     parser.add_argument('--folder',
@@ -21,29 +21,23 @@ def main():
     epic_folder = args.folder
 
     os.makedirs(epic_folder, exist_ok=False)
-    
-    epic_key = os.getenv('NASA_KEY')
 
-    params = {"api_key": epic_key}
+    nasa_token = os.getenv('NASA_KEY')
 
-    response = requests.get(epic_link, params=params)
+    payload = {'api_key': nasa_token}
+    url = 'https://api.nasa.gov/EPIC/api/natural/images'
+    response = requests.get(url, params=payload)
     response.raise_for_status()
-    epic_images = response.json()
-    
-    images_quantity = 10
+    nasa_epic_answers = response.json()
 
-    for epic_image in epic_images[:images_quantity]:
-        file_name = epic_image["image"]
-        epic_image_date = epic_image["date"]
+    for answer_number, answer in enumerate(nasa_epic_answers, 1):
+        file_name = f'epic_{answer_number}.png'
+        date = answer['date'].split()[0]
+        date = date.split('-')
+        name = answer['image']
+        epic_image_link = f'https://api.nasa.gov/EPIC/archive/natural/{date[0]}/{date[1]}/{date[2]}/png/{name}.png'
 
-        epic_image_date = datetime.fromisoformat(epic_image_date).strftime("%Y/%m/%d")
-        link_path = f"https://api.nasa.gov/EPIC/archive/natural/{epic_image_date}/png/{file_name}.png"
-        encoded_params = urlencode(params)
-        encoded_params = encoded_params.lstrip('?')
-        link_path_with_params = f"{link_path}{encoded_params}"
-        path = os.path.join(epic_folder, f'{file_name}.png')
-        
-        download_image(link_path_with_params, path)
+        download_image(epic_folder, epic_image_link, file_name, payload)
 
 
 if __name__ == "__main__":
