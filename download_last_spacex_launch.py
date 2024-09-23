@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 def main():
     load_dotenv()
 
-    parser = argparse.ArgumentParser(description='Введите ID первого запуска:')
+    parser = argparse.ArgumentParser(description='Это скрипт download_last_spacex_launch.py в переменную epic_key введите свай наса-ключ и запустите скрип: download_last_spacex_launch.py --folder (имя папки в которую хотите скачать фото)')
     parser.add_argument('--folder',
                         type=str,
                         default='last_spacex_launch_images',
