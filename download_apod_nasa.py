@@ -11,7 +11,7 @@ def main():
     load_dotenv()
     link_apod = 'https://api.nasa.gov/planetary/apod'
 
-    parser = argparse.ArgumentParser(description='Введите KEY APOD-запуска:')
+    parser = argparse.ArgumentParser(description='Сачивакет фотографии APOD запуска nasa')
     parser.add_argument('--folder',
                         type=str,
                         default='apod_nasa_images',
