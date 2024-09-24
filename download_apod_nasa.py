@@ -31,13 +31,13 @@ def main():
     response.raise_for_status()
     links = response.json()
 
-    for number, link in enumerate(links):
+    for number, link in enumerate(links, start=1):
         if 'url' in link:
             url = link['url']
 
             filename2 = urlparse(url)
             expansion = os.path.splitext(url)
-            file_name = f'{filename2.netloc}_{number + 1}{expansion[1]}'
+            file_name = f'{filename2.netloc}_{number}{expansion[1]}'
             full_path = os.path.join(apod_folder, file_name)
 
             download_image(apod_folder, url, full_path)
