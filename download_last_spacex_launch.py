@@ -29,8 +29,8 @@ def main():
     response.raise_for_status()
     last_launch_links = response.json()['links']['flickr']['original']
 
-    for url_number, last_nasa_url in enumerate(last_launch_links):
-        filename = f'spacex{url_number+1}.jpg'
+    for url_number, last_nasa_url in enumerate(last_launch_links, 1):
+        filename = f'spacex{url_number}.jpg'
         full_path = os.path.join(folder_last_launch, filename)
 
         download_image(folder_last_launch, last_nasa_url, full_path)
