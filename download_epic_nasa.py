@@ -11,7 +11,7 @@ from urllib.parse import urlencode
 def main():
     load_dotenv()
 
-    parser = argparse.ArgumentParser(description='Это скрипт download_epic_nasa.py в переменную epic_key введите свай наса-ключ и запустите скрип: download_epic_nasa.py --folder (имя папки в которую хотите скачать фото)')
+    parser = argparse.ArgumentParser(description='Скачивает фотографии EPIC запуска nasa')
     parser.add_argument('--folder',
                         type=str,
                         default='epic_nasa_images',
